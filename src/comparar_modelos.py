@@ -22,6 +22,12 @@ PREGUNTA = (
     "Responde en máximo 150 palabras e indica los artículos del Código del Trabajo."
 )
 
+# Prompt de sistema: le dice al modelo QUÉ ROL cumple (va en "systemInstruction" del body)
+SYSTEM_INSTRUCTION = (
+    "Eres un asistente de derechos laborales en Chile. Respondes en lenguaje simple, "
+    "citas el artículo del Código del Trabajo que respalda cada punto y no inventas artículos."
+)
+
 
 MAX_INTENTOS = 3   # cuántas veces reintentar si el servicio está saturado
 ESPERA_BASE = 5    # segundos de espera antes del primer reintento (después 10, 15...)
@@ -60,7 +66,7 @@ def probar_modelo(modelo, pregunta):
         print(f"\n--- Petición {i + 1} de {REPETICIONES} ---")
         # el try va DENTRO del for: si falla una petición, no se pierden las demás
         try:
-            url, body = armar_peticion(pregunta, modelo)
+            url, body = armar_peticion(modelo, pregunta, SYSTEM_INSTRUCTION)  # mismo orden que la definición
             datos, latencia = enviar_con_reintentos(url, body)
             costo = calcular_costo(datos, precios["entrada"], precios["salida"])
             texto = extraer_texto(datos)
