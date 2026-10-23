@@ -1,0 +1,14 @@
+{
+  "clasificar_consulta": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "extraer_datos_despido": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "extraer_datos_vacaciones": {
+    "exitos": 3,
+    "intentos": 3
+  }
+}
