@@ -1,0 +1,211 @@
+[
+  {
+    "id": 1,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Cuántos días de vacaciones me corresponden al año?",
+    "referencia": "Te corresponden 15 días hábiles de feriado anual con remuneración íntegra, después de un año de trabajo (art. 67).",
+    "respuesta": "Te corresponden **15 días hábiles** de vacaciones pagadas por cada año de trabajo (se cuentan de lunes a viernes). \n\nSi trabajas en la Región de Aysén, en la Región de Magallanes o en la provincia de Palena, te corresponden **20 días hábiles**.\n\nPara exigir este beneficio, debes tener más de un año de servicio con el mismo empleador.\n\n*Base legal: **Artículo 67 del Código del Trabajo**.*",
+    "precision": 0.197,
+    "cobertura": 0.684,
+    "f1": 0.306
+  },
+  {
+    "id": 2,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Para contar mis días de vacaciones, ¿el sábado cuenta como día hábil?",
+    "referencia": "No, para el feriado el sábado se considera siempre inhábil (art. 69).",
+    "respuesta": "No, el sábado **no cuenta** como día hábil para calcular tus vacaciones. Para el feriado anual, los días hábiles se cuentan únicamente de lunes a viernes, sin importar cuál sea tu jornada habitual de trabajo.\n\nEsto está respaldado por el **Artículo 69 del Código del Trabajo**, el cual establece textualmente que, para los efectos del feriado, el día sábado se considerará siempre inhábil.",
+    "precision": 0.159,
+    "cobertura": 0.833,
+    "f1": 0.267
+  },
+  {
+    "id": 3,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Llevo más de diez años trabajando, ¿tengo derecho a más días de vacaciones?",
+    "referencia": "Sí, con diez años de trabajo tienes un día adicional de feriado por cada tres nuevos años trabajados, llamado feriado progresivo (art. 68).",
+    "respuesta": "Sí, tienes derecho al feriado progresivo. Si acreditas 10 años de trabajo (continuos o no, para cualquier empleador), ganas **1 día adicional** de vacaciones por cada 3 nuevos años trabajados con tu empleador actual. \n\nPara solicitarlo, debes certificar esos 10 años iniciales con un certificado de cotizaciones de tu AFP.\n\nEste beneficio está respaldado por el **Artículo 68 del Código del Trabajo**.",
+    "precision": 0.29,
+    "cobertura": 0.783,
+    "f1": 0.424
+  },
+  {
+    "id": 4,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Me despidieron antes de cumplir un año, ¿me pagan algo por vacaciones?",
+    "referencia": "Sí, te corresponde una indemnización por feriado proporcional al tiempo trabajado desde tu contratación o último aniversario (art. 73).",
+    "respuesta": "Sí, te corresponde el pago de **vacaciones proporcionales** (feriado proporcional). \n\nAunque no hayas cumplido el año de servicio, la ley establece que si tu contrato termina antes de ese plazo, el empleador debe pagarte el dinero equivalente al tiempo de descanso que alcanzaste a acumular. Este monto se debe incluir en tu finiquito.\n\n**Respaldo legal:** **Artículo 73 del Código del Trabajo**, el cual exige indemnizar el feriado cuando la relación laboral termina antes de cumplir el año.",
+    "precision": 0.117,
+    "cobertura": 0.474,
+    "f1": 0.188
+  },
+  {
+    "id": 5,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Puedo pedirle a mi jefe que me pague las vacaciones en vez de tomarlas?",
+    "referencia": "No, el feriado no se puede compensar en dinero mientras el contrato está vigente; solo se paga en dinero si el contrato termina (art. 73).",
+    "respuesta": "No, no puedes. En Chile, la ley prohíbe compensar las vacaciones en dinero mientras tu contrato de trabajo esté vigente, ya que su objetivo principal es el descanso. \n\nLa única excepción es cuando te desvinculas de la empresa (por renuncia o despido); solo en ese momento deben pagarte los días de vacaciones no utilizados.\n\nEsto se encuentra respaldado en el **Artículo 73 del Código del Trabajo**.",
+    "precision": 0.212,
+    "cobertura": 0.56,
+    "f1": 0.308
+  },
+  {
+    "id": 6,
+    "tema": "vacaciones",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Puedo juntar las vacaciones de varios años?",
+    "referencia": "Sí, el feriado se puede acumular, pero solo hasta por dos períodos consecutivos (art. 70).",
+    "respuesta": "Sí, pero con un límite. Puedes acumular las vacaciones de hasta **dos períodos consecutivos** (dos años) mediante un acuerdo escrito con tu empleador. \n\nEl empleador está obligado a otorgarte el primer período antes de que acumules un tercer año, por lo que **nunca se pueden juntar tres o más períodos**.\n\nEsto está respaldado en el **Artículo 70 del Código del Trabajo**.",
+    "precision": 0.18,
+    "cobertura": 0.733,
+    "f1": 0.289
+  },
+  {
+    "id": 7,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Cuánto me pagan de indemnización por años de servicio si me despiden por necesidades de la empresa?",
+    "referencia": "Te corresponde un mes de remuneración por cada año de servicio y fracción superior a seis meses, con un tope de 11 años (art. 163).",
+    "respuesta": "Si trabajaste un año o más, te corresponde **un mes de sueldo por cada año de servicio** y fracción superior a seis meses. El límite máximo es de 11 años (11 meses de sueldo).\n\nPara el cálculo se considera tu última remuneración mensual, con un tope legal de 90 UF.\n\nEsto se respalda en el **Artículo 163** (cálculo e indemnización) y el **Artículo 172** (tope de remuneración) del Código del Trabajo.",
+    "precision": 0.338,
+    "cobertura": 0.96,
+    "f1": 0.5
+  },
+  {
+    "id": 8,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Trabajé 8 meses y me despidieron por necesidades de la empresa, ¿me pagan indemnización por años de servicio?",
+    "referencia": "No, la indemnización por años de servicio exige que el contrato haya durado al menos un año (art. 163).",
+    "respuesta": "No. Para recibir indemnización por años de servicio debes haber trabajado **al menos un año** para el mismo empleador (Art. 163 del Código del Trabajo). \n\nSin embargo, al haber trabajado 8 meses te corresponde:\n\n1. **Indemnización sustitutiva de aviso previo**: Un mes de sueldo, si no te avisaron con 30 días de anticipación (Art. 161 y 162).\n2. **Feriado proporcional**: Pago por las vacaciones no ocupadas acumuladas en ese periodo (Art. 73).",
+    "precision": 0.181,
+    "cobertura": 0.684,
+    "f1": 0.286
+  },
+  {
+    "id": 9,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Gano un sueldo muy alto, ¿hay un tope para calcular mi indemnización?",
+    "referencia": "Sí, para calcular la indemnización la remuneración mensual tiene un tope de 90 UF (art. 172).",
+    "respuesta": "Sí, existe un tope legal. Para calcular tu indemnización por años de servicio, la ley establece un límite máximo de remuneración mensual de **90 Unidades de Fomento (UF)**, según el valor de la UF el último día del mes anterior al despido. \n\nSi tu sueldo supera este monto, el cálculo se hará considerando únicamente las 90 UF, a menos que en tu contrato individual o colectivo hayan pactado un límite mayor.\n\n*(Artículo 172 del Código del Trabajo)*",
+    "precision": 0.182,
+    "cobertura": 0.875,
+    "f1": 0.301
+  },
+  {
+    "id": 10,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Me despidieron sin avisarme con anticipación, ¿me corresponde algo?",
+    "referencia": "Sí, si no te avisaron con 30 días de anticipación te corresponde una indemnización sustitutiva equivalente a tu última remuneración mensual (art. 161 y 162).",
+    "respuesta": "Sí. Si te despidieron por \"necesidades de la empresa\" sin avisarte con al menos 30 días de anticipación, la ley exige que te paguen una **indemnización sustitutiva del aviso previo**, equivalente a un mes de sueldo.\n\nAdemás, deben pagarte tus vacaciones proporcionales y la indemnización por años de servicio (si trabajaste un año o más).\n\nEsto se respalda en el **Artículo 161** y el **Artículo 162 del Código del Trabajo**.",
+    "precision": 0.243,
+    "cobertura": 0.68,
+    "f1": 0.358
+  },
+  {
+    "id": 11,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Me corresponde indemnización por años de servicio si renuncio voluntariamente?",
+    "referencia": "No, la renuncia voluntaria no da derecho a indemnización por años de servicio, salvo que tu contrato lo establezca (art. 159 y 163).",
+    "respuesta": "Por regla general, **no te corresponde** indemnización por años de servicio si renuncias voluntariamente (Art. 159 N° 2 del Código del Trabajo). La ley exige este pago principalmente ante un despido por necesidades de la empresa (Art. 163).\n\nSolo te corresponderá si así lo pactaste previamente con tu empleador en tu contrato individual o colectivo (Art. 163). \n\nSin embargo, al renunciar **sí deben pagarte** el feriado proporcional o vacaciones pendientes (Art. 73).",
+    "precision": 0.181,
+    "cobertura": 0.565,
+    "f1": 0.274
+  },
+  {
+    "id": 12,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Si me despiden por falta de probidad, ¿tengo derecho a indemnización?",
+    "referencia": "No, el despido por una causal del art. 160, como la falta de probidad, no da derecho a indemnización por años de servicio.",
+    "respuesta": "**No.** La falta de probidad es una causal de despido sin derecho a indemnización por años de servicio ni a aviso previo, según el **artículo 160 N° 1 letra a) del Código del Trabajo**.\n\nSolo tienes derecho a cobrar tus días trabajados y las vacaciones proporcionales pendientes.\n\nSi consideras que el despido es injustificado o falso, puedes demandar ante los Tribunales del Trabajo (**artículo 168**). Si el juez te da la razón, recibirás las indemnizaciones con recargos legales.",
+    "precision": 0.244,
+    "cobertura": 0.826,
+    "f1": 0.376
+  },
+  {
+    "id": 13,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Si un juez dice que mi despido por necesidades de la empresa fue injustificado, ¿me pagan más?",
+    "referencia": "Sí, la indemnización por años de servicio se aumenta en un 30% (art. 168).",
+    "respuesta": "Sí. Si un juez declara que tu despido por necesidades de la empresa fue injustificado, el empleador deberá pagar tu indemnización por años de servicio con un **recargo del 30%**.\n\nAdemás, si no te pagaron la indemnización sustitutiva del aviso previo, el juez ordenará su pago, todo con los reajustes e intereses correspondientes.\n\nEsto se encuentra respaldado en el **Artículo 168, letra a)** del Código del Trabajo.",
+    "precision": 0.179,
+    "cobertura": 0.857,
+    "f1": 0.296
+  },
+  {
+    "id": 14,
+    "tema": "indemnizacion",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿El empleador me puede descontar algo de la indemnización por el seguro de cesantía?",
+    "referencia": "Sí, en un despido por necesidades de la empresa se descuenta lo que el empleador aportó a tu cuenta individual del seguro de cesantía (Ley 19.728, art. 13).",
+    "respuesta": "Sí, pero **solo si te despiden por \"Necesidades de la empresa\"**.\n\nEn ese caso, el empleador puede descontar de tu indemnización por años de servicio el saldo acumulado que provenga de los **aportes que él hizo** a tu Seguro de Cesantía (AFC). Jamás puede descontar tus propios aportes. Si te despiden por otra causa, el descuento no corresponde.\n\nEsto se aplica cuando el despido es por el **Artículo 161 del Código del Trabajo** (en conjunto con el Artículo 13 de la Ley 19.728).",
+    "precision": 0.253,
+    "cobertura": 0.75,
+    "f1": 0.378
+  },
+  {
+    "id": 15,
+    "tema": "finiquito",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Cuánto tiempo tiene la empresa para pagarme el finiquito?",
+    "referencia": "El empleador debe pagar el finiquito dentro de 10 días hábiles desde la separación del trabajador (art. 177).",
+    "respuesta": "La empresa tiene un plazo máximo de **10 días hábiles** para poner a tu disposición y pagarte el finiquito, contados desde la fecha en que termina el contrato de trabajo. \n\nEl pago en cuotas solo es válido si tú lo aceptas por escrito y debe incluir intereses y reajustes.\n\nEsto se respalda en el **Artículo 177 del Código del Trabajo**.",
+    "precision": 0.2,
+    "cobertura": 0.667,
+    "f1": 0.308
+  },
+  {
+    "id": 16,
+    "tema": "finiquito",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "¿Dónde tengo que firmar el finiquito para que sea válido?",
+    "referencia": "El finiquito debe ser firmado y ratificado ante un ministro de fe, como un inspector del trabajo o un notario (art. 177).",
+    "respuesta": "Para que tu finiquito sea válido, debes firmarlo presencialmente ante un **Inspector del Trabajo**, un **Notario Público** o el **Presidente del Sindicato** de tu empresa. \n\nTambién puedes ratificarlo de forma electrónica en el sitio web de la **Dirección del Trabajo** (www.dt.gob.cl) usando tu ClaveÚnica.\n\nSi no se firma ante una de estas autoridades o plataformas autorizadas, el finiquito no tiene validez legal.\n\n*Base legal: Artículo 177 del Código del Trabajo.*",
+    "precision": 0.171,
+    "cobertura": 0.545,
+    "f1": 0.261
+  },
+  {
+    "id": 17,
+    "tema": "finiquito",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Creo que me despidieron injustamente, ¿cuánto plazo tengo para reclamar?",
+    "referencia": "Tienes 60 días hábiles desde la separación para demandar ante el juzgado del trabajo, plazo que puede llegar a 90 días hábiles si antes reclamas en la Inspección del Trabajo (art. 168).",
+    "respuesta": "Tienes **60 días hábiles** (de lunes a sábado) contados desde la fecha de tu despido para demandar ante los Tribunales del Trabajo. \n\nSi primero presentas un reclamo en la Inspección del Trabajo, el plazo se suspende mientras dure el trámite. Sin embargo, en ningún caso podrás demandar después de transcurridos **90 días hábiles** desde tu despido.\n\nEste derecho está garantizado en el **Artículo 168 del Código del Trabajo**.",
+    "precision": 0.353,
+    "cobertura": 0.75,
+    "f1": 0.48
+  },
+  {
+    "id": 18,
+    "tema": "finiquito",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Si quiero renunciar, ¿con cuánta anticipación tengo que avisar?",
+    "referencia": "Debes avisar a tu empleador por escrito con al menos 30 días de anticipación (art. 159).",
+    "respuesta": "Debes presentar tu renuncia por escrito a tu empleador con al menos **30 días de anticipación**. \n\nPara que sea válida, la renuncia debe estar ratificada ante un ministro de fe, como un notario, un dirigente sindical o en el sitio web de la Inspección del Trabajo (dt.gob.cl). \n\nSi avisas con menos tiempo, tu empleador de todas formas debe aceptarla y no puede realizar descuentos en tu finiquito.\n\n**Respaldo legal:** Artículo 159 N° 2 del Código del Trabajo.",
+    "precision": 0.182,
+    "cobertura": 0.875,
+    "f1": 0.301
+  },
+  {
+    "id": 19,
+    "tema": "finiquito",
+    "modelo": "gemini-3.6-flash",
+    "consulta": "Me despidieron pero tenían mis cotizaciones previsionales impagas, ¿es válido el despido?",
+    "referencia": "No, si las cotizaciones no están pagadas al día el despido no pone término al contrato y el empleador debe seguir pagando las remuneraciones hasta regularizarlas (art. 162, Ley Bustos).",
+    "respuesta": "No, el despido no es efectivo. Según el **artículo 162 del Código del Trabajo** (inciso quinto), si el empleador no tiene al día tus cotizaciones previsionales, el despido no produce el efecto de poner fin al contrato.\n\nPara que el despido sea válido, la empresa debe pagar todo lo adeudado y notificártelo. Mientras no convalide el despido pagando, tiene la obligación de seguir pagándote tu sueldo mensual y demás beneficios (efecto conocido como \"Ley Bustos\").",
+    "precision": 0.267,
+    "cobertura": 0.667,
+    "f1": 0.381
+  }
+]
