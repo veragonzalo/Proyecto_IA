@@ -1,0 +1,22 @@
+[
+  {
+    "consulta": "¿Cuántos días de vacaciones me corresponden al año si trabajo de lunes a viernes?",
+    "referencia": "Te corresponden 15 días hábiles de feriado anual con remuneración íntegra, después de un año de trabajo (art. 67 del Código del Trabajo).",
+    "respuesta": "Te corresponden **15 días hábiles** de vacaciones pagadas al año, tras cumplir un año de servicio (**Artículo 67** del Código del Trabajo). \n\nPara calcular este descanso, la ley establece que el día sábado siempre se considera inhábil (**Artículo 69** del Código del Trabajo). \n\nPor lo tanto, al trabajar de lunes a viernes, tus 15 días hábiles equivalen en la práctica a **tres semanas completas** de vacaciones.",
+    "coincidencia_cruda": 0.55,
+    "coincidencia_procesada": 0.632,
+    "precision": 0.242,
+    "cobertura": 0.696,
+    "f1": 0.36
+  },
+  {
+    "consulta": "¿Cuánto me pagan de indemnización por años de servicio si me despiden por necesidades de la empresa?",
+    "referencia": "Te corresponde un mes de remuneración por cada año de servicio y fracción superior a seis meses, con un tope de 11 años (art. 163 del Código del Trabajo).",
+    "respuesta": "Si te despiden por necesidades de la empresa (**artículo 161**), te corresponde el equivalente a **un mes de sueldo por cada año trabajado** y fracción superior a seis meses (**artículo 163**).\n\nEsta indemnización tiene un tope máximo legal de **11 años** (11 meses de sueldo) (**artículo 163**). Además, para calcular cada mes de pago, la ley establece un tope máximo de 90 Unidades de Fomento (UF) (**artículo 172**).",
+    "coincidencia_cruda": 0.52,
+    "coincidencia_procesada": 0.72,
+    "precision": 0.309,
+    "cobertura": 0.724,
+    "f1": 0.433
+  }
+]

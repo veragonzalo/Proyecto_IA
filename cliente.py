@@ -2,9 +2,16 @@ import time
 import random
 from typing import Callable, Any
 
-from src.consumir_gemini import armar_peticion, extraer_texto, enviar_peticion
+from src.consumir_gemini import MODELO, armar_peticion, extraer_texto, enviar_peticion
+#MODELO se define en un solo lugar (src/consumir_gemini.py) para no tener dos valores distintos
 
-MODELO = "gemini-3.6-flash"
+#Rol del asistente: se usa cuando no se pasa otro system_instruction
+#(un systemInstruction vacío puede hacer que Gemini responda error 400)
+SYSTEM_INSTRUCTION = (
+    "Eres un asistente de derechos laborales en Chile. Respondes en lenguaje simple, "
+    "en máximo 80 palabras, y citas el artículo del Código del Trabajo que respalda "
+    "cada punto. No inventas artículos."
+)
 
 def con_reintento(
     funcion: Callable[[], Any], 
@@ -37,7 +44,7 @@ def registrar_costo(respuesta: dict) -> float:
     return costo_estimado
  
  
-def consultar_modelo(pregunta: str, system_instruction: str = "") -> str:
+def consultar_modelo(pregunta: str, system_instruction: str = SYSTEM_INSTRUCTION) -> str:
     url, cuerpo = armar_peticion(MODELO, pregunta, system_instruction)
     try:
         respuesta = con_reintento(lambda: enviar_peticion(url, cuerpo))
@@ -48,7 +55,7 @@ def consultar_modelo(pregunta: str, system_instruction: str = "") -> str:
  
  
 if __name__ == "__main__":
-    resultado = consultar_modelo("¿Cuál es la capital de Chile?", " ")
+    resultado = consultar_modelo("¿Cuántos días de vacaciones me corresponden al año?")
     print(resultado)
 
 '''

@@ -10,7 +10,7 @@ import re
 load_dotenv()
 
 #Constantes
-MODELO = "gemini-3.6-flash"
+MODELO = "gemini-3.8-flash"  #elegido en docs/decision-arquitectura.md
 URL_BASE = "https://generativelanguage.googleapis.com/v1beta/models/"
 API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -84,7 +84,7 @@ def obtener_dato_de_prueba(pregunta): #pregunta = "Confirma la conexion"
     }
 
     system_instruction = "Eres un asistente amigable y respondes en máximo 2 palabras."
-    url, body = armar_peticion("gemini-3.6-flash", pregunta, system_instruction, response_schema) #obtiene url y body
+    url, body = armar_peticion(MODELO, pregunta, system_instruction, response_schema) #obtiene url y body
 
     inicio = time.perf_counter() #Empezar el contador
 
@@ -122,8 +122,8 @@ def calcular_costo(datos, precio_entrada, precio_salida):
     }
     '''
     tokens_entrada = uso["promptTokenCount"]
-    tokens_salida = uso["candidatesTokenCount"]
-    tokens_razonamiento = uso["thoughtsTokenCount"] #revisar si existe o no, si no existe colocarlo como 0
+    tokens_salida = uso.get("candidatesTokenCount", 0)
+    tokens_razonamiento = uso.get("thoughtsTokenCount", 0) #si no existe, vale 0
     costo = (tokens_entrada * precio_entrada) + ( (tokens_salida + tokens_razonamiento) * precio_salida )
     return costo
 
@@ -146,10 +146,13 @@ def parsear_respuesta_json(texto, claves_requeridas=None):
     return datos
 
 
-try:
-    print(obtener_dato_de_prueba("Confirma en una frase corta que esta conexión funciona"))
-except (ValueError, RuntimeError, TimeoutError) as error:
-    print("No se pudo completar la operación: ", error)
+#solo se ejecuta si corro ESTE archivo directamente (python src/consumir_gemini.py),
+#NO cuando otro archivo (cliente.py, pytest) lo importa
+if __name__ == "__main__":
+    try:
+        print(obtener_dato_de_prueba("Confirma en una frase corta que esta conexión funciona"))
+    except (ValueError, RuntimeError, TimeoutError) as error:
+        print("No se pudo completar la operación: ", error)
 
 '''
 Ejecute 4 veces la MISMA petición con 1 modelo
