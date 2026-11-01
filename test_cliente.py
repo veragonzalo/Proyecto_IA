@@ -131,3 +131,11 @@ def test_consultar_modelo_propaga_value_error():
         with pytest.raises(ValueError):
             consultar_modelo("pregunta de prueba")
 
+
+
+def test_enviar_peticion_tiempo_agotado_se_puede_reintentar():
+    # un timeout de requests debe llegar como TimeoutError, para que con_reintento lo reintente
+    import requests
+    with patch("src.consumir_gemini.requests.post", side_effect=requests.exceptions.Timeout):
+        with pytest.raises(TimeoutError):
+            enviar_peticion("https://ejemplo.invalid", {"pregunta": "test"})

@@ -41,16 +41,17 @@ def armar_peticion(modelo, pregunta, system_instruction, response_schema=None): 
 #función envía la petición
 def enviar_peticion(url, body):
     try:
-        respuesta = requests.post(url, json=body, timeout=30)
+        #90 s: gemini-3.8-flash tarda entre 21 y 41 s en responder (ver docs/decision-arquitectura.md)
+        respuesta = requests.post(url, json=body, timeout=90)
     except requests.exceptions.ConnectionError:
         raise RuntimeError("No se pudo conectar con el servicio. Intenta de nuevo en unos momentos.")
     except requests.exceptions.Timeout:
-        raise RuntimeError("Se agotó el tiempo. Intenta de nuevo en unos momentos.")
+        raise TimeoutError("Se agotó el tiempo. Intenta de nuevo en unos momentos.")  #TimeoutError = vale la pena reintentar
 
     if respuesta.status_code in(401, 403):
         raise ValueError("Credencial invalida o sin permiso. Revisa tu GEMINI_API_KEY")
     if respuesta.status_code >= 500:
-        raise TimeoutError("El proveedor no pudo procesar la peticion, Hay que esperar y reintentar")
+        raise TimeoutError(f"El proveedor no pudo procesar la peticion (error {respuesta.status_code}). Hay que esperar y reintentar")
     if respuesta.status_code == 429:
         segundos = respuesta.headers.get("Retry-After")
         mensaje = f"Límite excedido. Reintentar en {segundos}s." if segundos else "Límite excedido."
