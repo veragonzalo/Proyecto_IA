@@ -16,7 +16,7 @@ Uso:  python revision_manual.py   (genera revision_manual.json)
 import json
 
 revision_manual = [
-    # ---------------- 5 casos con F1 más bajo ----------------
+    
     {
         "id": 4,
         "consulta": "Me despidieron antes de cumplir un año, ¿me pagan algo por vacaciones?",
